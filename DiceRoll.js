@@ -68,10 +68,30 @@ function fillOutStats(lineIndex){
       tr += "<td>"+tableStats[i][2]+"</td>";
       tr += "</tr>";
       t += tr;
+	}
+document.getElementById("stats").innerHTML += t;
+
+
+
+};
+
+let linage = null;
+if ($("#dwarf".checked) {
+	linage = $("#dwarf").value;
 }
-document.getElementById("posts").innerHTML += t;
-
-
-
-
+if ($("#demiElf".checked) {
+	linage = $("#demiElf").value;
 }
+if ($("#elf".checked) {
+	linage = $("#elf").value;
+}
+if ($("#human".checked) {
+	linage = $("#human").value;
+}
+if ($("#kitra".checked) {
+	linage = $("#kitra").value;
+}
+if ($("#nivolk".checked) {
+	linage = $("#nivolk").value;
+}
+fillOutStats(linage);

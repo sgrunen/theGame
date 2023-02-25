@@ -1,0 +1,52 @@
+<!-- 
+Name: Sher Grünenberg
+Assignment: 
+Date: 2023
+CSCI 294, Spring 2023
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Game</title>
+    <script src="DiceRoll.js"></script>   
+    <link rel="stylesheet" href="theGame.css">
+</head>
+
+<body>
+	<h1> The Game ©</h1>
+	<p>Welcome to The Game, a role-playing game that defies genres. The rules can be adapted to Fantasy, SteamPunk, WildWest and even Post-Apocolyptic type of worlds. This page will start your adventure by helping you roll up your own player character.</p>
+	
+	<h2> Lineage</h2>
+	<p> There are 6 player character lineages to choose from; Dwarf, Demi-Elf, Elf, Human, Kitra, and Nivolk.</p>
+	<p> [insert descriptions of each one]
+		
+	<div id="create">
+		<h2> Choose your lineage: </h2>
+		<select id="lineageOption">
+			<option value="0">--pick lineage--</option>
+            <option value="1">Dwarf</option>
+			<option value="2">Demi-Elf</option>
+			<option value="3">Elf</option>
+			<option value="4">Human</option>
+			<option value="5">Kitra</option>
+			<option value="6">Nivolk</option>
+			<br>
+        </select>
+        <button onclick="getOption()"> Check option </button>
+	</div>
+
+    <div class = "output" id="showStats"></div>
+	
+	<br>
+	
+		<div id = "stats"></div>
+
+
+</body>
+</html>

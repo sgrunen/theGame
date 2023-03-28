@@ -1,6 +1,6 @@
 <!-- 
 Name: Sher Grünenberg
-Assignment: Project
+Assignment: Project - Midterm Draft
 Date: 2023
 CSCI 294, Spring 2023
 -->
@@ -9,29 +9,56 @@ CSCI 294, Spring 2023
 <!DOCTYPE html>
 <html>
 
-
-
 <head>
 	<meta charset="utf-8"> 
 	<title> Character Stats </title>
 	<link rel="stylesheet" href="theGame.css">
-	<script src="DiceRoll2.js"></script>
-	<style></style>
+	<script src="DiceRoll.js"></script>
+
+	<style>
+
+	</style>
 	
 </head>
 
+<header>
+	<h1> The Game ©</h1>
+</header>
+
 <body>
-	<?php
-	if ($_SERVER["REQUEST_METHOD"] == "POST"){
-		$lineIndex = htmlspecialchars($_POST['Lineage']);
-		echo($lineIndex);?>
-		<script> 
-			var lineIndex = parseInt("<?php echo ($lineIndex)?>"); 
-			fillOutStats(lineIndex);
-		</script>
-	<?php } ?>
+	<h2>If you are ready, then let's proceed!</h2>
+	<div id="create">
+		<h3> Choose your lineage: </h3>
+		<select id="lineageOption">
+			<option value="0">--pick lineage--</option>
+            <option value="1">Dwarf</option>
+			<option value="2">Demi-Elf</option>
+			<option value="3">Elf</option>
+			<option value="4">Human</option>
+			<option value="5">Kitra</option>
+			<option value="6">Nivolk</option>
+			<br>
+        </select>
+        <button id="step1" onclick="getOption()"> Roll Stats </button>
+	</div>
+
+    <div class = "closed" id="showStats"></div>
+	<div class = "closed" id="secondaryStats">
 	
-    <div id="showStats"></div>
+	<p id="tp"></p>
+	<p id="lp"></p>
+	<p id="dp"></p>
+	<p id="spCruise"></p>
+	<p id="spSprint"></p>
+
+	</div>
+	
+	<br>
+	
+	<div id = "stats"></div>
 
 </body>
+<footer> 
+	<small>&copy; Copyright 2023, The HSE Group. All Rights Reserved</small> 
+</footer> 
 </html>

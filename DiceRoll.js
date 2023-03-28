@@ -1,27 +1,21 @@
 /*
 Name: Sher Grünenberg
-Assignment: 
+Assignment: Project - Midterm Draft
 Date: 2023
 CSCI 294, Spring 2023
 */
-/* May be benefitial to make this a class where I can create functions to go up skill levels, deduct points, etc...
-class Lineage {
-	constructor(name){
-		this.name = name;
-	}
-}
-*/
+'use strict'
 
 function getOption() {
-    selectElement = document.querySelector('#lineageOption');
-    output = selectElement.value;
+    var selectElement = document.querySelector('#lineageOption');
+    var output = selectElement.value;
 	if (output == 0){
 		document.getElementById("showStats").innerHTML="pick valid entry";
 	}
     else {
-		fillOutStats(output);
-		//document.querySelector('.output').textContent = output;
+		var forSaving = fillOutStats(output);
 	}
+	return forSaving;
 }
 
 
@@ -31,7 +25,7 @@ function diceThrow(diceSize){
 
 function statCreator(attribute){
 	const values = new Array (attribute+1);
-	diceSum = 0;
+	var diceSum = 0;
 	for (let i = 0; i<values.length; i++){
 		values[i] = diceThrow(6);
 	}
@@ -91,11 +85,11 @@ function fillOutStats(lineIndex){
 	];
 	
 	var tableStats = new Array(5);
-	for (i=0;i<5;i++){
+	for (let i=0;i<5;i++){
 		tableStats[i] = new Array(10);
 	}
 
-	for (i=0; i < 10; i++){
+	for (let i=0; i < 10; i++){
 		tableStats[0][i] = attributeDice[0][i];
 		tableStats[1][i] = statCreator(attributeDice[lineIndex][i]);
 		tableStats[2][i] = tableStats[1][i]+diceThrow(potentialDiceSize[lineIndex][i]);
@@ -150,32 +144,39 @@ function fillOutStats(lineIndex){
 		t += "</tr>";
 	}
 	t+="</table>";
- // document.write(`${t}`); tried this, but it wipes out my css
- document.getElementById("showStats").innerHTML=t;
+
+	//calculate secondary characteristics and speed
+	var tough = tableStats[3][0] + tableStats[3][2];
+	var life = tableStats[3][2]+(0.5*tableStats[3][6]);
+	var death = -tableStats[3][6];
+	var cruise = 0.5*tableStats[3][2];
+	var sprint = cruise+(0.5*tableStats[3][1]);
+	if (lineage == "Dwarf" || lineage == "Nivolk"){
+		cruise = cruise/2;
+		sprint = sprint/2;
+	}
+	if (lineage == "Kitra"){
+		cruise+=4;
+		sprint+=4;
+	}
+	var cruiseMPH = cruise*2*0.225;
+	var sprintMPH = sprint*2*.45;
+
+// send info to print to page
+	document.getElementById("showStats").innerHTML=t;
+	let tp = document.querySelector('#tp');
+ tp.innerHTML = `TP: ${tough}`;
+	let lp = document.querySelector('#lp');
+ lp.innerHTML = `LP: ${(life).toFixed(0)}`;
+	let dp = document.querySelector('#dp');
+ dp.innerHTML = `DP: ${death}`;
+	let spCruise = document.querySelector('#spCruise');
+ spCruise.innerHTML = `Cruise: ${(cruise).toFixed(0)} (${cruiseMPH.toFixed(1)} mph)`;
+	let spSprint = document.querySelector('#spSprint');
+ spSprint.innerHTML = `Sprint: ${(sprint).toFixed(0)} (${sprintMPH.toFixed(1)} mph)`;
+
+ //return tableStats;
 };
 
-//different things i have tried to get the value from the submit button into the function.
-//var lineage = document.querySelector('input[name="Lineage"]:checked').value;
-//fillOutStats(lineage);
-/*function lineageChoice(){
-let lineage = null;
-if ($("#dwarf".checked)) {
-	lineage = $("#dwarf").value;
-}
-if ($("#demiElf".checked)) {
-	lineage = $("#demiElf").value;
-}
-if ($("#elf".checked)) {
-	lineage = $("#elf").value;
-}
-if ($("#human".checked)) {
-	lineage = $("#human").value;
-}
-if ($("#kitra".checked)) {
-	lineage = $("#kitra").value;
-}
-if ($("#nivolk".checked)) {
-	lineage = $("#nivolk").value;
-}
-fillOutStats(lineage);
-}*/
+
+

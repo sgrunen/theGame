@@ -1,13 +1,12 @@
 <!-- 
 Name: Sher Grünenberg
-Assignment: Project - Midterm Draft
+Assignment: Project - Final
 Date: 2023
 CSCI 294, Spring 2023
 -->
 
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -16,178 +15,33 @@ CSCI 294, Spring 2023
     <title>The Game</title>
     <script src="theGame.js"></script>   
     <link rel="stylesheet" href="theGame.css">
-	<style>
-		
-		h3 {
-    		padding: .25em 0 .25em 25px;
-    		cursor: pointer;
-    		/* Keep mouse as a pointing finger */
-    		background: url(images/sword.png) no-repeat left center;
-			background-size: 25px 25px;
-		}	
 
-		h3.minus {
-    		background: url(images/sword_minus.png) no-repeat left center;
-			background-size: 25px 25px;
-		}
-
-		a {
-    		color: black;
-    		text-decoration: none;
-		}
-
-		a:focus,
-		a:hover {
-    		color: blue;
-		}
-
-		div {
-    		display: none;
-		}
-
-		div.open {
-    		display: block;
-		}
-	</style>
 </head>
 
 <header>
 	<h1> The Game ©</h1>
+	<ul class = "navigation">
+		<li><a class="active" href="#home">Home</a></li>
+		<li><a href="charInfo.html">Character Info</a></li>
+		<li><a href="statSheet.html">Create Character</a></li>
+		<li><a href="dicePage.html">Skill Rolls</a></li>
+	</ul>
 </header>
 
 <body>
+	<h2>Welcome to The Game!</h2>
+	<div>
+		<img src="images/gameBook.jpg" alt="The Game, book" width="25%" align="left" hspace="10" vspace="10">
+		<p>The Game is our answer to all of the other role-playing games which we have been butchering over the years. The Game was crated by a goup of hardened gamers who have had to modify every system they have come across in an attempt to find gratification. Eventually we got fed up, and said,"@#$%#! Pass the Coke!" Soon after that with the Chart in hand and finals quickly approaching, we decided to create our own bloody game. Such are legends born.</p>
+		<p>The Game is an amalgamation of all of the ideas we've accululated over years of gaming. Naturally, it is a masterful collage of the group's ideas.</p>
+		<p>After years of Beta-testing, The Game is now a role-playing game that defies genres. The rules can be adapted to Fantasy, SteamPunk, WildWest and even Post-Apocolyptic types of worlds.</p>
+		<p>This site will start your adventure by helping you roll up your own player character. Note: This site is meant to compliment the book, not replace it. Reference the book for any clarifications.</p>
+		<h3>HAVE FUN!!!</h3>
 
-	<p>Welcome to The Game, a role-playing game that defies genres. The rules can be adapted to Fantasy, SteamPunk, WildWest and even Post-Apocolyptic type of worlds. This page will start your adventure by helping you roll up your own player character.</p>
+		<button onclick="window.location.href = 'charInfo.html';">Learn more about Character Creation</button>
+	</div>
 	
-	<h2> Lineage</h2>
-	<p> There are 6 player character lineages to choose from;</p>
-	<main id="descriptions">
-		
-		<h3><a href="#">Dwarf</a></h3>
-		<div>
-			<p>
-				Dwarves are heavily built demi-humans. They are usually 3-5 feet tall.  Both males and female dwarves have beards, and in most dwarven societies there isn't any difference in how they are treated. Most non-dwarves find it impossible to tell them apart, which has given rise to the myth that there are no female dwarves. Dwarves tend to be dour and serious. They generally hold a grudge for a long time (at least four to five generations, but usually more), and have special places in their hearts for goblins and orcs. (This place is rumored to be right next to where they sharpen their weapons.)  
-			</p>
-			<p>
-				They are not usually fond of elves, but this is a generality, not a law. Dwarves tend to live in mountains where there are "good" rocks.  They are often miners, but not all live under ground. Many herd sheep and goats in the higher reaches of the mountains, gathering their wool to help add fiber to their bread. 
-			</p>
-			<p>
-				Dwarves have a lifespan of 500-700 years old and reach their maturity around the age of 100 years.
-			</p>
-		</div>
 
-		<h3><a href="#">Demi-Elf</a></h3>
-		<div>
-			<p>
-				Demi-Elves resemble thier parents from both sides. Demi-Elves are slender and willowy, though not as sylphlike as a full-blooded elf. A Demi-Elf stands taller than a typical human, but not quite as tall as most elves. Demi-Elves are usually 5 1/2 to 6 1/2 feet in height. 
-			</p>
-			<p>
-				The demi-elf is a unique lineage. Only due to interbreeding of humans and elves, or pure demi-elves can create them.  The demi-elf normally has no society of their own, but rather fits in either Human or Eleven society. The fit is usually far from perfect, and often compared to fitting square blocks into round holes. The demi-elf is different and everyone notices it.  The humans notice the oval shaped eyes, the fine boned delicate beauty, and pointed ears, and the eleves notice the facial hair, the tendency to rush to actions, the human body structure, and worst of all, the human passions. There are rumors of severral demi-elven cities around the world. The search for these cities can become a quest for the demi-elf. (Similar to the searches for Atlantis, Avalon, or The Seven Cities of Gold...) 
-			</p>
-			<p>
-				Demi-Elves have a lifespan of 600-800 years old and reach their maturity around the age of 100 years.
-			</p>
-		</div>
-
-		<h3><a href="#">Elf</a></h3>
-		<div>
-			<p>
-				Elves are magical demi-humans. They are tall and fine boned, usually around 6 - 6 1/2 feet tall. They tend to be incredibly beautiful, and even the "homely" elves hold some amazement for humans. Elves do not reproduce quickly; comvine this with with how long it takes an elf to mature, and it is easy to see why their numbers are believed to be in general decline. For this reason, elven children are soem of the most closely guarded treasures of any elven community. Elves are generally removed from the flow of time. They often seem to be in a different reality to many humans. They have an increadible love of music and ancient lore (which most of them remember). 
-			</p>
-			<p> 
-				On the flip side, they have an increadible hatred of orcs, and go out of their way to kill them in most any situation. Elved tend to live in small bands, but there are a few Elven cities hidden around the world.  They generally like to live in large forests an, and tend to be druids and rangers. 
-			</p>
-			<p>
-				Elves live forever. Elves reach maturity around 200 - 250 years of age.
-			</p>
-			
-		</div>
-
-		<h3><a href="#">Human</a></h3>
-		<div>
-			<p>
-				Humans are normally around 5 to 6+ feet tall.
-			</p>
-			<p>
-				Humans are found in almost any climate, and almost in any condition. Humans tend to organize in bands, clans, or in cities. The greatest strength of humans is their ability to work together and adapt to new challenges and environments. this is a inborn trait, and individual humans can do this as easily as a group.
-			</p>
-			<p>
-				Humans are very quick to learn and have few hinderances placed upon them. As a group, nothing is banned to them, given enough perserverance and time. On some worlds they have adapted to give themselves extra abilities which are not found in the bulk of humanity, so ask your GM.
-			</p>
-			<p>
-				Human have a lifespan of 50-70 years. Note: Humans live londer when they have access to competent healing.  Humans reach maturity around 15-20 years of age.
-			</p>
-		</div>
-
-		<h3><a href="#">Kitra</a></h3>
-		<div>
-			<p>
-				Kitra are large bi/quadrupedal cats. They can walk on four legs without penalty, but it isn't their normal mode of movement.
-			</p>
-			<p>
-				Kitra range in height from 5 - 6 1/2 feet tall when standing upright, with an additional 1 1/2 - 2 feet in their tails. The birth of the kitra's lineage is a question left for the truly wise to ponder (Or the truly bored), but common beliefs are that they were created by the gods like everyone else, or that they evolved from large cats into their present form. There are whispers that the Warlock Gato created the very first kitra. (And was quickly destroyed by Bast. Only the gods have the rights to make new species, like your GM.)
-			</p>
-			<p>
-				Kitra tend to be very curious, and slightly distracted. Their curiosity makes them tend toward adventurers of one sort or another, and prides of kitra that roam the countryside are not an uncommon occurance. At home, they tend to live in tribes/prides, and normally the wisest/eldest tends to lead them. Inter-tribal conflicts do happen, but they are normally only fought to first blood. most kitra tend to worship the cat deity, Bast.
-			</p>
-			<p>
-				The lifespan of a Kitra is approximately 45-65 years. The kitra reach maturity about age 11, and don't start to tire unitl their late 30's to late 40's.
-			</p>
-		</div>
-
-		<h3><a href="#">Nivolk</a></h3>
-		<div>
-			<p>
-				Nivolk are a small, slender people that can live anywhere, but prefer areas which are not inhabited by other lineages and provide large amounts of natural cover. Nivolk range in height from a tiny 2 1/2 feet to just under 4 feet in height.
-			</p>
-			<p>
-				They are most commonly found and prefer to live in lightly to densely wooded areas. Nivolk are a gregarious people and always form large communities when possible. They can often be found spread throughout a forest, with some in tree-top cities and some living in the bases of these trees. Living in and around trees has resulted in some of the nivolk developing their upper body instead of their legs. Because of this, many nivolk have the Climbing skill without the use of equipment.
-			</p>
-			<p>
-				Nivolk are often mistaken for pixies and sprites because of their colorful woodland dress (Actually it is effective camoflauge, but outside of the forest it just looks colorful.) and due to a sweet tooth that often has them steal pies (and other tasty objects) from human farms or settlements.
-			</p>
-			<p>
-				Nivolk tend to be fairly secure because of thier location, and most predators ignore them. The only real enemy that the nivolk face are large predatory cats (But not the kitra, they are more curious than hungry. And if they are hungry, the nivolk can just fee the kitra 'normal' food.) Needless to say, nivolk are a little skittish of kitra.
-			</p>
-			<p>
-				A nivolk lifespan is 70-110 years. Nivolk reach maturity at around 30 years of age.
-			</p>
-		</div>
-
-
-
-	</main>
-	
-	<h2>Attributes</h2>
-		<p>
-			Each lineage has 10 attributes that you will roll for.
-			<ul>
-				<li>Strength (STR) - Physical Strength</li>
-				<li>Agility (AGL) - Flexibility and Coordination</li>
-				<li>Endurance (END) - Amount of abuse the body can take</li>
-				<li>Beauty (BEA) - Attractiveness base on a human norm</li>
-				<li>Perception (PER) - Acuity of senses and reaction time</li>
-				<li>Intelligence (INT) - Cognitive abilities</li>
-				<li>Willpower (WIL) - Force of character, stubbernness</li>
-				<li>Charisma (CHR) - Force of personality</li>
-				<li>Wisdom (WIS) - Un-common sense</li>
-			</ul>
-		</p>
-		<p>These attributes are what actually give your character, well character.</p>
-		<h2> Secondary Characteristics</h2>
-		<p>Toughness Points (TP) are a combination of fatigue, luck, and physical abuse the character can take before they are seriously injured. These include scrapes, bruises, and non-flying yip yip dogs. Toughness Points can be calculated by using the following formula:</p>
-		<p>TP = STR + END</p>
-		<p>Life Points (LP) are the amount of serious physical damage that the character can endure. LP are things like broken bones, internal bruises, poisoning, etc... Once a player has lost all of these, then they ARE unconcious. Life Points can be calculated by using the following formula: </p>
-		<p>LP = END + 1/2 WILL </p>
-		<p>Death Point (DP) is the point at which the Character dies. (GASP!) The Character can take WIL points of damage before they die. This is represented as a negative number for purposes of game play. Death Point can be calculated by using the following formula:</p>
-		<p>DP = -(WIL)</p>
-		<p>Cruise and Sprint are how fast a character moves in one game segment. Cruise and Sprint are measured in feet. Cruise is the speed which your character can sustain for extended periods. Generally charcters can continue on this pace for 1 hr per END point. Sprint is the maximum speed which your character can run. This speed can be kept up for only very short amounts of time. Characters can keep up this pace equal to their END in segments. They can be calculated using the following formulas:</p>
-		<p>Cruise = 1/2 END</p>
-		<p>Sprint = 1/2 (END + AGL)</p>
-		<p>NOTE: There are a few exceptions. Dwarves and Nivolk move at 1/2 speeds. Kitra move at 4 speed points higher.</p>
-
-
-	<button onclick="window.location.href = 'statSheet.html';">Let's make a new character!</button>
 </body>
 <footer> 
 	<small>&copy; Copyright 2023, The HSE Group. All Rights Reserved</small> 

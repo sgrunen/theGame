@@ -1,6 +1,6 @@
 /*
 Name: Sher Grünenberg
-Assignment: Project - Midterm Draft
+Assignment: Project - Final
 Date: 2023
 CSCI 294, Spring 2023
 */		
@@ -32,3 +32,29 @@ caption {
 	font-size: 36px;
 }
 
+ul.navigation{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: black;
+  }
+  
+  ul.navigation li {
+	float: left;
+  }
+  
+  li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+  }
+  
+  li a:hover {
+	background-color: black;
+  }
+  .active {
+	background-color: green;
+  }

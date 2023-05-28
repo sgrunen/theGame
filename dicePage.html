@@ -1,0 +1,132 @@
+<!-- 
+Name: Sher Grünenberg
+Assignment: Project - Final
+Date: 2023
+CSCI 294, Spring 2023
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"> 
+        <title> Skill Check Rolling </title>
+        <link rel="stylesheet" href="theGame.css">
+        <script defer src="https://unpkg.com/p5"></script>
+        <script src="roller.js"></script>
+        <script src="DiceRoll.js"></script>
+        <script src="spinningD20.js"></script>
+
+    
+        <style>
+            .flex-container {
+                display: flex;
+            }
+
+            .flex-child {
+                flex: 1;
+                border: 2px solid green;
+                padding: 5px;
+            }  
+
+            .flex-child:first-child {
+                margin-right: 20px;
+            } 
+        </style>
+        
+    </head>
+    
+    <header>
+        <h1> The Game ©</h1>
+        <div id="mycanvas"></div>
+        <ul class = "navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="charInfo.html">Character Info</a></li>
+          <li><a href="statSheet.html">Create Character</a></li>
+          <li><a class="active" href="#rolls">Skill Rolls</a></li>
+        </ul>
+    </header>  
+
+    <body>
+      <h2>Ability and Skill Rolls</h2>
+      <p>
+        The basis of the mechanins for the system are skill tests. A roll is used to determine the chance for success and the eventual outcome of many tasks a character attempts.
+      </p>
+      <p>
+        The rolls the character makes are modified by their skills and abilities and how they are test against any opposition. If Bob wants to batter through the castle gates, or push down the castle wall, he may be alloed a roll to try. Is he strong enough? Only tie, lots and lots of time, will tell.
+        </p>
+        <p>
+          The most basic roll in the Game is versus an attribute or skill. To do this, subtract the pertinent attribute or level from 20. That result is the base target level, and a successful roll is that number or higher. 
+        </p>
+        <p>Base Target Number = 20 - Attribute or Skill Level</p>
+        <p>
+          The Base Target Number can be modified by a hoard of different things. The most common is a difficulty number which is set by the GM. Another common modifier is Defense Value. Yep, combat is based on skills too. A Base Target Number plus known modifiers is the Target Number. The number the player rolls on the dice (normally a 20 sided dice) minus the Target Number is the result.
+        </p>
+        <p>Target Number = Base Target Number + Modifiers</p>
+        <p>Result = Target Number - d20 roll</p>
+        <p>
+          If you don't want to do all that math yourself, you can use the sections below to help. Magic has additional built in modifiers based on whether or not you are engaged in combat or not. Check the appropriate box before calculating.
+        </p>
+      <h3>Regular Skills</h3>
+      <div class="flex-container" >
+
+          <div class="flex-child">
+            <form>
+              <p><label for="level">Current Skill Level: </label>
+              <input type="number" id="skillLevel" name="level" min="1"></p>
+              <div class = "closed" id="invalid"></div>
+              <p><label for="mod">Applicable Modifier Total: </label>
+              <input type="number" id="skillMod" name="mod" value="0"></p>
+            </form>
+            <button onclick="skillCheck()">Calculate</button>
+          </div>
+            
+          <div class="flex-child">
+            <p id="need"></p>
+            <p id="roll"></p>
+            <p id="result"></p>
+            <h2 id="text"></h2>
+          </div>
+            
+      </div>
+      <h3>Casting Magic</h3>
+      <div class="flex-container">
+
+          <div class="flex-child">
+            <form>
+              <p><label for="skill">Magic Sphere Level: </label>
+              <input type="number" id="magicLvl" name="skill" min="1"></p>           
+              <p><label for="hard">Magic Spell Level: </label>
+              <input type="number" id="spellLvl" name="hard" min="1"></p>
+              <div class = "closed" id="invalid2"></div>
+              <p><label for="mod2">Applicable Modifier Total: </label>
+              <input type="number" id="spellMod" name="mod2" value="0"></p>
+              <p>Are you in combat?</p>
+              <p><label for="NoCombat">Not in Combat</label>
+              <input type="radio" id="NoCombat" name="CombatStatus" checked = checked"><br>
+              <label for="InCombat">In Combat</label>
+              <input type="radio" id="InCombat" name="CombatStatus" [value] = "-3"><br>
+              <label for="MeleeCombat">In Melee Combat</label>
+              <input type="radio" id="MeleeCombat" name="CombatStatus" [value] = "0"></p>
+            </form>
+            <button onclick="spellCheck()">Calculate</button>
+          </div>
+            
+          <div class="flex-child">
+            <p id="need2"></p>
+            <p id="roll2"></p>
+            <p id="result2"></p>
+            <h2 id="text2"></h2>
+              
+          </div>
+        </div>
+            
+         
+          
+    </body> 
+
+    <footer> 
+      <small>&copy; Copyright 2023, The HSE Group. All Rights Reserved</small> 
+    </footer> 
+
+
+</html>

@@ -1,6 +1,6 @@
 /*
 Name: Sher Grünenberg
-Assignment: Project - Midterm Draft
+Assignment: Project - Final
 Date: 2023
 CSCI 294, Spring 2023
 */
